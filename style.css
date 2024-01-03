@@ -9,6 +9,7 @@ body {
 
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -77,10 +78,10 @@ h1 {
   font-weight: 600;
   font-family: "Rubik Scribble", Verdana, Geneva, Tahoma, sans-serif;
   color: black;
-  overflow-wrap: break-word;
+  /* overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: auto;
-  white-space: normal;
+  white-space: normal; */
 }
 
 .list-item > button {
