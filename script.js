@@ -26,12 +26,18 @@ addNew.addEventListener('click', () => {
     if (textInput.value != '' && dateInput.value != '') {
         const newItem = document.createElement('div')
         const delBtn = document.createElement('button')
+        const itemCb = document.createElement('input')
+
+        itemCb.type = 'checkbox'
+
         delBtn.textContent = 'Delete'
         delBtn.classList.add('deleteBtn')
         newItem.classList.add('list-item')
 
         newItem.innerHTML = `<p class="text">${textInput.value}</p>
         <p class="date">${dateInput.value}</p>`
+
+        const text = newItem.querySelector('.text')
 
         textInput.value = ''
         dateInput.value = ''
@@ -44,6 +50,11 @@ addNew.addEventListener('click', () => {
                 list.appendChild(emptyMessage)
             }
         })
+
+        itemCb.addEventListener('change', () => {
+            text.classList.toggle('checked')
+        })
+        newItem.appendChild(itemCb)
 
         newItem.appendChild(delBtn)
         list.appendChild(newItem)
